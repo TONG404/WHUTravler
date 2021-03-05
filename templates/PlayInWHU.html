@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+    <head>
+		{% load static %}
+        <title>玩在武大！</title>
+        <link rel="stylesheet" href="{%static "css/T3.css" %}" /></script>
+        <link rel="stylesheet" href="{%static "/css/PuzzlePages.css" %}" /></script>
+		<link rel="stylesheet" type="text/css" href="{%static "/css/answersheet.css" %}">
+        <script type="text/javascript" src="{%static "js/raphael.min.js" %}" defer="defer" /></script>
+        <script type="text/javascript" src="{%static "js/html2canvas.min.js" %}" defer="defer" /></script>
+        <script type="text/javascript" src="{%static "js/T3.js" %}" defer="defer" /></script>
+        <script type="text/javascript" src="{%static "js/Quiz.js" %}"/></script>
+        <script type="text/javascript" src="{%static "js/Puzzle.js" %}"/></script>
+		<script type="text/javascript" src="{%static "js/jQuery.js" %}"></script>
+		<script>
+		function changeImage(x){
+			if(x==1){
+				document.getElementById("bag").src="{%static "/img/bag_Shining.png" %}";
+			}else{
+				document.getElementById("bag").src="{%static "/img/bag.png" %}";
+			}
+		}
+		function ChangeImg(id,src){
+			document.getElementById(id).src=src;
+		}
+		</script>
+    </head>
+    <body>
+	<div id="all">
+			<img id="help" src="/static/img/notePlayWHU.png">
+			<img id="BtnRtn" src="/static/img/Btn/RtnToMenu2.png" onclick="location='/'" onmouseenter="ChangeImg(&quot;BtnRtn&quot;,&quot;/static/img/Btn/RtnToMenu.png&quot;)" onmouseout="ChangeImg(&quot;BtnRtn&quot;,&quot;/static/img/Btn/RtnToMenu2.png&quot;)">
+			<img id="BtnCol" src="/static/img/Btn/ToCollection2.png" onclick="location='/Collection'"  onmouseenter="ChangeImg(&quot;BtnCol&quot;,&quot;/static/img/Btn/ToCollection.png&quot;)" onmouseout="ChangeImg(&quot;BtnCol&quot;,&quot;/static/img/Btn/ToCollection2.png&quot;)">
+			<div id="getPuzzlePages">
+				<form id="PuzzleForm" action="/updatePuzzle" method="post">
+				{% csrf_token %}
+				<input name="pid" id="pid" hidden>
+				</form>
+				<div id="LocationHint">
+				<div id="LocationTitle">武大正门</div>
+				<div id="LocationDescription">
+				你获得了一块碎片！
+				</div>
+				<div id="PuzzlePieces">
+				
+				</div>
+				</div>
+				<img id="bag" onclick="SubmitForms()" onmouseenter="changeImage(1)" onmouseout="changeImage(0)" src="{%static "/img/bag.png" %}">
+
+			</div>
+			<div id="AnswerSheet">
+			<form method="POST" id="AnswerForm">
+			{% csrf_token %}
+			<input name="answer" id="answer" hidden>
+			<input name="problemid" id="problemid" hidden>
+			</form>
+			<div id="ProblemTitleBox">
+中国绘画中，马向来是一种极难画的对象。但有一位画家，“一洗万古凡马空”的状况，获得全世界绘画届的一致好评。请问，该位画家是谁？
+			</div>
+			<div id="selA" class="sel" onclick="setAnswer(1)">D.财务部核算四科（医学部老行政楼）</div>
+			<div id="selB" class="sel" onclick="setAnswer(2)">D.财务部核算四科（医学部老行政楼）</div>
+			<div id="selC" class="sel" onclick="setAnswer(3)">D.财务部核算四科（医学部老行政楼）</div>
+			<div id="selD" class="sel" onclick="setAnswer(4)">DD.财务部核算四科（医学部老行政楼）</div>
+			</div>
+
+        <div id="WHUmap">
+            <h1 id="H1">我的精武值：<span id="等级">0</span></h1>
+            <table id="图例">
+                <tr class="selPack" data-级别="4"><td>4</td><td class="selPack">经常去这里</td></tr>
+                <tr class="selPack" data-级别="3"><td>3</td><td class="selPack">去过好几次</td></tr>
+                <tr class="selPack" data-级别="2"><td>2</td><td class="selPack">去过一两次</td></tr>
+                <tr class="selPack" data-级别="1"><td>1</td><td class="selPack">曾经有路过</td></tr>
+                <tr class="selPack" data-级别="0"><td>0</td><td class="selPack">从来没去过</td></tr>
+            </table>
+            <table id="sampleTable">
+                <tr>
+                    <th/>
+                </tr>
+                <tr><td class="selPack" data-级别="4">经常去这里</td></tr>
+                <tr><td class="selPack" data-级别="3">去过好几次</td></tr>
+                <tr><td class="selPack" data-级别="2">去过一两次</td></tr>
+                <tr><td class="selPack" data-级别="1">曾经有路过</td></tr>
+                <tr><td class="selPack" data-级别="0">从来没去过</td></tr>
+            </table>
+        </div>
+		<img id="finalImg"></img>
+	</div>
+
+    </body>
+</html>

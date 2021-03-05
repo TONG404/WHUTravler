@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>学在武大！</title>
+{% load static %}
+<script type="text/javascript" src="{%static "js/T1.js" %}"></script>
+<script type="text/javascript" src="{%static "js/Puzzle.js" %}"></script>
+<script type="text/javascript" src="{%static "js/jQuery.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{%static "/css/T1.css" %}">
+<link rel="stylesheet" type="text/css" href="{%static "/css/PuzzlePages.css" %}">
+<link rel="stylesheet" type="text/css" href="{%static "/css/answersheet.css" %}">
+<script>
+function ChangeImg(id,src){
+	if(id=="go"&&lock)return;
+	document.getElementById(id).src=src;
+}
+</script>
+</head>
+
+<body>
+
+  <div class="all">
+
+    <div class="background">
+	<div id="getPuzzlePages">
+		<form id="PuzzleForm" action="/updatePuzzle" method="post">
+		{% csrf_token %}
+		<input name="pid" id="pid" hidden>
+		</form>
+		<div id="LocationHint">
+		<div id="LocationTitle">武大正门</div>
+		<div id="LocationDescription">
+		你获得了一块碎片！
+		</div>
+		<div id="PuzzlePieces">
+		
+		</div>
+		</div>
+		<img id="bag" onclick="SubmitForms()" onmouseenter="ChangeImg(&quot;bag&quot;,&quot;/static/img/bag_Shining.png&quot;)" onmouseout="ChangeImg(&quot;bag&quot;,&quot;/static/img/bag.png&quot;)" src="{%static "/img/bag.png" %}">
+
+	</div>
+	<div id="AnswerSheet">
+		<form method="POST" id="AnswerForm">
+		{% csrf_token %}
+		<input name="answer" id="answer" hidden>
+		<input name="id" id="id" hidden>
+		</form>
+		<div id="ProblemTitleBox">
+		图书馆的图书丢失后需要进行按照规定赔偿，请问你丢失了一本2008年出版的定价38的中文书，你需要赔多少钱？
+		<br>
+		（附：中文图书1990年后出版的：按原价×5倍+20元（图书加工费））
+		</div>
+			<div id="selA" class="sel" onclick="setAnswer(1)">A.水星、金星、地球、火星、木星、土星、天王星、海王星、冥王星</div>
+			<div id="selB" class="sel" onclick="setAnswer(2)">B.水星、金星、地球、火星、木星、土星、天王星、海王星、冥王星</div>
+			<div id="selC" class="sel" onclick="setAnswer(3)">C.水星、金星、地球、火星、木星、土星、天王星、海王星、冥王星</div>
+			<div id="selD" class="sel" onclick="setAnswer(4)">D.水星、金星、地球、火星、木星、土星、天王星、海王星、冥王星</div>
+	</div>
+	<img id="BtnRtn" src="/static/img/Btn/RtnToMenu2.png" onclick="location='/'" onmouseenter="ChangeImg(&quot;BtnRtn&quot;,&quot;/static/img/Btn/RtnToMenu.png&quot;)" onmouseout="ChangeImg(&quot;BtnRtn&quot;,&quot;/static/img/Btn/RtnToMenu2.png&quot;)">
+<img id="BtnCol" src="/static/img/Btn/ToCollection2.png" onclick="location='/Collection'"  onmouseenter="ChangeImg(&quot;BtnCol&quot;,&quot;/static/img/Btn/ToCollection.png&quot;)" onmouseout="ChangeImg(&quot;BtnCol&quot;,&quot;/static/img/Btn/ToCollection2.png&quot;)">
+
+      <!--      style="background:url('../../static/img/map.png');width:100%;height:100%;" -->
+      <img id="Map" src="/static/img/backgroundLearning.jpg">
+      <div>
+        <img id="go" onclick="go()" onmouseenter="ChangeImg(&quot;go&quot;,&quot;/static/img/go_Shining.png&quot;)" onmouseout="ChangeImg(&quot;go&quot;,&quot;/static/img/go.png&quot;)" src="/static/img/go.png" class="go">
+        <img id="go2" style="display:none" src="/static/img/dice_Moving.gif">
+        <img id="goe1" style="display:none" src="/static/img/dice/1.png">
+        <img id="goe2" style="display:none" src="/static/img/dice/2.png">
+        <img id="goe3" style="display:none" src="/static/img/dice/3.png">
+        <img id="goe4" style="display:none" src="/static/img/dice/4.png">
+        <img id="goe5" style="display:none" src="/static/img/dice/5.png">
+        <img id="goe6" style="display:none" src="/static/img/dice/6.png">
+        <img id="player" src="/static/img/girl_small.png" class="girl">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+

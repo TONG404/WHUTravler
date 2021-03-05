@@ -1,0 +1,193 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+body{
+margin:0px;
+}
+</style>
+</head>
+<body>
+<style>
+#bgImage{
+height:2240px ;
+width:1080px;
+background-image:url(/static/img/4f64e309f2a712bf/7.jpg) ;
+background-repeat:no-repeat ;
+background-size:1080px 2240px ;
+}
+#clock{
+background-image:url(/static/img/4f64e309f2a712bf/clock.png) ;
+background-repeat:no-repeat;
+position:absolute;
+top:26px;
+left:45px;
+height:75px ;
+width:75px;
+z-index:10;
+}
+#show_time_bottom{
+backgroundColor:#1DC694;
+height:129px ;
+width:774px;
+border-radius:8px;
+position:absolute;
+top:708px;
+left:153px;
+z-index:8;
+}
+
+#show_time{
+position:absolute;
+top:30px;
+left:139px;
+font-family: PingFangSC-Regular;
+font-size:59.5px;
+color:white;
+z-index:9;
+}
+
+#place{
+position:absolute;
+top:881px;
+left:228px;
+}
+#name{
+position:absolute;
+top:979.4px;
+left:228px;
+}
+#academy{
+position:absolute;
+top:1172.5px;
+left:228px;
+}
+#information{
+color:#888888;
+font-family: PingFangSC-Regular;
+font-size:41.9px;
+}
+
+#button{
+background-color:#C9C9C9;
+color:#C9C9C9;
+height:125px;
+width:350px;
+position:absolute;
+top:2045px;
+left:70px;
+}
+
+</style>
+<script type="text/javascript">
+	var R1=5,G1=165,B1=75;
+	var R2=29,G2=197,B2=150;
+	var R=5,G=165,B=75;
+	var now=1,curTime=0;
+	
+	setInterval("fun(show_time)",2);
+	function fun(timeID){ 
+		curTime+=2;
+		if(curTime<=2000&&curTime%80==0)R+=now;
+		if(curTime<=2000&&curTime%60==0)G+=now;
+		if(curTime<=2000&&curTime%24==0)B+=now;
+		if(curTime==3000){
+			now=-now;
+			curTime=0;
+		}
+		document.getElementById("show_time_bottom").style.backgroundColor=`rgb(${R},${G},${B})`;
+		
+		var date = new Date();  //鍒涘缓瀵硅薄  
+		var y = date.getFullYear();     //鑾峰彇骞翠唤  
+		var m =date.getMonth()+1;   //鑾峰彇鏈堜唤  杩斿洖0-11  
+		var d = date.getDate(); // 鑾峰彇鏃? 
+		var w = date.getDay();   //鑾峰彇鏄熸湡鍑? 杩斿洖0-6   (0=鏄熸湡澶? 
+		var h = date.getHours();  //鏃?
+		var minute = date.getMinutes()  //鍒?
+		var s = date.getSeconds(); //绉?
+		var sss = date.getMilliseconds() ; //姣
+		if(m<10){
+			m = "0"+m;
+		}
+		if(d<10){
+			d = "0"+d;
+		}
+		if(h<10){
+			h = "0"+h;
+		}
+		
+		
+		if(minute<10){
+			minute = "0"+minute;
+		}
+		
+		
+		if(s<10){
+			s = "0"+s;
+		}
+		sss = (sss-sss%10)/10;
+		if(sss<10){
+			sss = "0"+sss;
+		}
+		document.getElementById(timeID.id).innerHTML 
+			= m+"-"+d+"   "+h+":"+minute+":"+s+"."+sss;
+	}
+	
+	function setInformation(tagId,itemName){
+		var newInfo = prompt("输入"+itemName);
+		if(newInfo==null)return;
+		document.getElementById(tagId).innerHTML=newInfo;
+		
+	}
+	
+	function changeBg(){
+		if(document.getElementById("button").innerHTML=="3"){
+			document.getElementById("button").innerHTML="4";
+			document.getElementById("bgImage").style.backgroundImage="url(8.jpg)";
+			
+		}else{
+			document.getElementById("button").innerHTML="3";
+			document.getElementById("bgImage").style.backgroundImage="url(7.jpg)";
+		}
+	}
+</script>
+<div id="bgImage">
+<div id="show_time_bottom">
+<div id="clock">
+</div>
+<div id="show_time">
+
+</div>
+</div>
+<div id="information">
+<div id="place" onclick=setInformation("placeInfo","通行地点")>
+<div style="display:inline-block;" >
+通行地点：
+</div>
+<div id="placeInfo" style="display:inline-block;margin-left:-10px;" >
+信息学部南门
+</div>
+</div>
+<div id="name" onclick=setInformation("userName","本人姓名")>
+<div style="display:inline-block;" >
+本人姓名：
+</div>
+<div id="userName" style="display:inline-block;margin-left:-10px;" >
+郑明阳
+</div>
+</div>
+<div id="academy" onclick=setInformation("academyName","本人姓名")>
+<div style="display:inline-block;" >
+单位名称：
+</div>
+<div id="academyName" style="display:inline-block;margin-left:-10px;" >
+测绘学院
+</div>
+</div>
+</div>
+</div>
+
+<div id="button" onclick=changeBg()>3</div>
+
+</body>
+</html>

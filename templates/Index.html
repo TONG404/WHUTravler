@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+<script>
+function ChangeImg(id,src){
+	if(id=="go"&&lock)return;
+	document.getElementById(id).src=src;
+}
+</script>
+</head>
+<body>
+  <div class="all">
+    <div class="background">
+      <img src="/static/img/index/background.jpg" class="background">
+      <div>
+        <img src="/static/img/index/play.png" class="play" id="play" onclick="location='/PlayInWHU'" onmouseenter="ChangeImg('play','/static/img/index/play1.png')" onmouseout="ChangeImg('play','/static/img/index/play.png')">
+        <img src="/static/img/index/learn.png" class="learn" id="learn" onclick="location='/LearnInWHU'" onmouseenter="ChangeImg('learn','/static/img/index/learn1.png')" onmouseout="ChangeImg('learn','/static/img/index/learn.png')">
+        <img src="/static/img/index/eat.png" class="eat" id="eat" onclick="location='/EatInWHU'" onmouseenter="ChangeImg('eat','/static/img/index/eat1.png')" onmouseout="ChangeImg('eat','/static/img/index/eat.png')">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

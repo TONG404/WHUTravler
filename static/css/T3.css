@@ -1,0 +1,124 @@
+@charset "utf-8";
+@font-face {
+/* font-test*/
+font-family: katong;
+src:url('/static/font/katong.ttf');
+}
+html {
+    background-color: #eee;
+}
+
+#H1 {
+	font-family: katong;
+    position: absolute;
+    top: 0%;
+	left:0;
+	right:0;
+}
+#help{
+	position:absolute;
+	left:70%;
+	z-index:2000;
+	width:20%;
+}
+#Language {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+#title{
+	border-style:solid;
+	border-width:5px;
+	border-color:rgb(102, 153, 51);
+	border-radius: 5px;
+	text-align:center;
+	background-color: rgb(204, 204, 153);
+	font-size:24px;
+	color:black;
+	margin-bottom:10px;
+}
+
+#finalImg {
+	visibility: hidden;
+    position: absolute;
+	left: 50%;
+	margin-left: -450px;
+	margin-top: 90px;
+    width: 900px;
+    height: 925px;
+    background-color: #eee;
+}
+#sampleTable {
+    position: fixed;
+    display: none;
+    z-index: 1000;
+}
+
+#sampleTable, #图例 {
+    border: solid 2px;
+    border-radius: 5px;
+    border-spacing: 0;
+    text-align: center;
+}
+
+#图例 {
+position: absolute;
+    top: 646px;
+    left: 600px;
+}
+
+#sampleTable th {
+    background-color: lightgrey;
+}
+
+#sampleTable td {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+#Share {
+    padding: 20px;
+	margin: 10px;
+    position: absolute;
+	top: 12%;
+	left: 30%;
+}
+
+#BtnRtn {
+    position: absolute;
+    left: 2%;
+    top: 5%;
+    z-index: 2000;
+}
+#BtnCol {
+    position: absolute;
+    left: 5.5%;
+    top: 30%;
+    z-index: 2000;
+}
+#WHUmap {
+    text-align: center;
+    visibility: visible;
+    position: absolute;
+    top: 5%;
+    left: 18%;
+    /* margin-left: -450px; */
+    /* margin-top: 90px; */
+    width: 900px;
+    height: 925px;
+}
+#all{
+    position: relative;
+    background-image: url(/static/img/backgroundPlaying.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 900px;
+    width: 1600px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+th, td {
+    padding: 0.2em;
+}
+

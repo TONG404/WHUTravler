@@ -1,0 +1,72 @@
+
+@font-face {
+/* font-test*/
+font-family: katong;
+src:url('/static/font/katong.ttf');
+}
+#AnswerSheet{
+	visibility:hidden;
+	position:absolute;
+	border-radius: 50px;
+	background-image: url(../img/QuizBackground.png);
+	/*background-color: #ff9900;*/
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	top:20%;
+	left:20%;
+	z-index:3000;
+	height:405px;
+	width:720px;
+	font-family: katong;
+}
+
+#ProblemTitleBox{
+    position: absolute;
+    top: 12%;
+    left: 5.75%;
+    width: 68.5%;
+    height: auto;
+    font-size: 20px;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: RGB( 0,102,80);
+    border-width: 5px;
+    background-color: rgba(255,255,255,0.2);
+}
+
+.sel{
+	font-size:18px;
+	font-weight:bold;
+	width:30%;
+	border-radius: 5px;
+	border-style:solid;
+	border-color:RGB( 0,102,80);
+	text-align:center;
+	border-width:5px;
+	background-color:#fefefe;
+}
+
+#selA{
+	position:absolute;
+	left: 5.75%;
+	top:54%;
+}
+
+#selB{
+	position:absolute;
+	left:45%;
+	top:54%;
+}
+
+#selC{
+	position:absolute;
+	left: 5.75%;
+	top:74%;
+}
+#selD{
+	position:absolute;
+	left:45%;
+	top:74%;
+}

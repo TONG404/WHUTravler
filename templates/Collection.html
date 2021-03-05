@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+{% load static %}
+<script type="text/javascript" src="{%static "js/jQuery.js" %}"></script>
+<script type="text/javascript" src="{%static "js/collection.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{%static "/css/collection.css" %}">
+
+<script>
+function ChangeImg(id,src){
+	document.getElementById(id).src=src;
+}
+
+</script>
+</head>
+
+<body>
+<div id="All">
+<div id="main-content">
+<div id="sidebar">
+<div class="BtnImg" id="Spring" onmouseout="MoveOver(false,&quot;Spring&quot;)" onmouseenter="MoveOver(true,&quot;Spring&quot;)" onclick="Select(&quot;Spring&quot;)">
+
+</div>
+<div class="BtnImg" id="Summer" onmouseout="MoveOver(false,&quot;Summer&quot;)" onmouseenter="MoveOver(true,&quot;Summer&quot;)" onclick="Select(&quot;Summer&quot;)">
+
+</div>
+<div class="BtnImg" id="Autumn" onmouseout="MoveOver(false,&quot;Autumn&quot;)" onmouseenter="MoveOver(true,&quot;Autumn&quot;)" onclick="Select(&quot;Autumn&quot;)">
+
+</div>
+<div class="BtnImg" id="Winter" onmouseout="MoveOver(false,&quot;Winter&quot;)" onmouseenter="MoveOver(true,&quot;Winter&quot;)" onclick="Select(&quot;Winter&quot;)">
+
+</div>
+
+</div>
+<div id="MainFrame">
+<table id="puzzleFrame" cellspacing="0">
+<tr>
+<td>
+<img id="pic1" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+<td>
+<img id="pic2" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+<td>
+<img id="pic3" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+<td>
+<img id="pic4" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+</tr>
+<tr>
+<td>
+<img id="pic5" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+<td>
+<img id="pic6" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+<td>
+<img id="pic7" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+<td>
+<img id="pic8" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+</tr>
+<tr>
+<td>
+<img id="pic9" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+<td>
+<img id="pic10" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+<td>
+<img id="pic11" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+<td>
+<img id="pic12" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+</tr>
+<tr>
+<td>
+<img id="pic13" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+<td>
+<img id="pic14" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+<td>
+<img id="pic15" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+<td>
+<img id="pic16" class="smallPiece" src="{%static "img/puzzle/000.jpg" %}">
+</td>
+</tr>
+</table>
+</div>
+<div id="sidebarRight">
+<div id="collectionHint">
+<img src="{%static "img/note2.png" %}" width="100%">
+<div id="BtnRtn">
+<img id="btnRtn" src="{%static "img/Btn/RtnToMenu2.png" %}" width="100%" onclick="location='/'" onmouseout="ChangeImg(&quot;btnRtn&quot;,&quot;{%static "img/Btn/RtnToMenu2.png" %}&quot;)" onmouseenter="ChangeImg(&quot;btnRtn&quot;,&quot;{%static "img/Btn/RtnToMenu.png" %}&quot;)">
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

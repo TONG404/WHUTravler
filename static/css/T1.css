@@ -1,0 +1,55 @@
+  .all {
+    width: 100%;
+    height: 100%;
+  }
+
+  .background {
+    position: relative;
+    width: auto;
+    height: 100%;
+    z-index: 0;
+  }
+#Map{
+	width:100%;
+	height:100%;
+}
+#BtnRtn{
+	height:14.35%;
+	width:auto;
+	position:absolute;
+	left:83%;
+	top:80%;
+	z-index:2000;
+}
+#BtnCol{
+	height:14.35%;
+	width:auto;
+    position: absolute;
+    left: 86%;
+    top: 60%;
+    z-index: 2000;
+}
+
+  .girl {
+    position: absolute;
+    z-index: 99;
+    height: 14.81%;
+    width: auto;
+    left: 40%;
+    top: 0%;
+  }
+#Help{
+	z-index:99;
+	position: absolute;
+	width: 20%;
+	left:75%;
+	top:5%;
+}
+  .go {
+    position: absolute;
+    z-index: 99;
+    height: 14.81%;
+    width: auto;
+    left: 5%;
+    top: 5%;
+  }
